@@ -794,6 +794,7 @@ section {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 55% 70%;
   position: relative;
   z-index: 1;
   border: 5px solid var(--bg-deep);
