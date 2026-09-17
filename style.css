@@ -1477,19 +1477,58 @@ body.loaded .section-indicator { opacity: 1; }
   cursor: default;
 }
 
-.fg-text:hover {
-  color: var(--accent);
-  -webkit-text-stroke-color: transparent;
+@media (hover: hover) {
+  .fg-text:hover {
+    color: var(--accent);
+    -webkit-text-stroke-color: transparent;
+  }
 }
 
 @media (max-width: 560px) {
+  .footer-giant { padding: 32px 12px 8px; }
+
   .fg-text {
     white-space: normal;
-    font-size: clamp(2.2rem, 13vw, 3.2rem);
-    line-height: 0.95;
+    font-size: clamp(1.6rem, 10vw, 2.6rem);
+    line-height: 1;
     display: block;
   }
 }
+
+/* =====================================================
+   v4 layer — GSAP / Lenis / WebGL support
+   ===================================================== */
+
+/* Hero WebGL canvas */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero .wrap, .hero-scroll { z-index: 2; }
+
+/* Split characters */
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* When GSAP is driving, disable the CSS fallback animations */
+html.gsap-on .reveal-load { animation: none; opacity: 1; }
+html.gsap-on .ht-inner { animation: none; transform: none; }
+html.gsap-on .line-inner { transition: none; }
+html.gsap-on .reveal { transition: none; opacity: 1; transform: none; }
+
+/* Lenis smooth-scroll recommended styles */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
 
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
