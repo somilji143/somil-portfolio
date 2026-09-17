@@ -4,654 +4,439 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Somil Srivastava — Java Developer & Marketplace Entrepreneur</title>
-  <meta name="description" content="Portfolio of Somil Srivastava — MCA student at Amity University, Full-Stack Java Developer, and Marketplace Entrepreneur building scalable digital commerce platforms." />
+  <meta name="description" content="Portfolio of Somil Srivastava — Full-Stack Java Developer and Marketplace Entrepreneur. MCA @ Amity University, Noida. I turn code into commerce." />
   <meta name="keywords" content="Somil Srivastava, Java Developer, Full Stack Developer, Marketplace, Amity University, MCA, Portfolio" />
   <meta name="author" content="Somil Srivastava" />
   <meta property="og:title" content="Somil Srivastava — Java Developer & Marketplace Entrepreneur" />
-  <meta property="og:description" content="Full-Stack Java Developer and Marketplace Entrepreneur. MCA @ Amity University, Noida." />
+  <meta property="og:description" content="I turn code into commerce. Full-Stack Java Developer and Marketplace Entrepreneur — MCA @ Amity University, Noida." />
   <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23d9f24f'/><text x='50' y='72' font-size='62' font-family='Georgia' font-style='italic' text-anchor='middle' fill='%230b0b0d'>S</text></svg>" />
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" id="scroll-progress"></div>
-
-  <!-- Mouse Glow -->
-  <div class="mouse-glow" id="mouse-glow"></div>
-
-  <!-- Particle Canvas -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Floating Geometric Shapes -->
-  <div class="floating-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-    <div class="shape shape-4"></div>
-    <div class="shape shape-5"></div>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-center">
+      <div class="pre-name">
+        <span class="pre-letter">S</span><span class="pre-letter">o</span><span class="pre-letter">m</span><span class="pre-letter">i</span><span class="pre-letter">l</span><span class="pre-letter pre-dot">.</span>
+      </div>
+      <div class="pre-tag">Portfolio — 2026</div>
+    </div>
+    <div class="pre-count"><span id="pre-count">0</span>%</div>
+    <div class="pre-bar"><span id="pre-bar-fill"></span></div>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-text">Somil</span><span class="logo-dot"></span>
+  <!-- Film grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Section indicator -->
+  <div class="section-indicator" aria-hidden="true">
+    <span id="si-current">00</span>
+    <span class="si-track"><span class="si-fill" id="si-fill"></span></span>
+    <span class="si-total">05</span>
+  </div>
+
+  <!-- Floating work preview -->
+  <div class="work-preview" id="work-preview" aria-hidden="true">
+    <span class="wp-idx" id="wp-idx">01</span>
+    <span class="wp-cta">Case study ↗</span>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Somil<span class="brand-reg">&reg;</span></span>
       </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-link">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          About
-        </a></li>
-        <li><a href="#skills" class="nav-link">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Skills
-        </a></li>
-        <li><a href="#projects" class="nav-link">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Projects
-        </a></li>
-        <li><a href="#education" class="nav-link">
-          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Education
-        </a></li>
-        <li><a href="#contact" class="nav-link">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Contact
-        </a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#about" class="nav-link" data-section="about"><span class="nav-num">01</span>About</a>
+        <a href="#work" class="nav-link" data-section="work"><span class="nav-num">02</span>Work</a>
+        <a href="#skills" class="nav-link" data-section="skills"><span class="nav-num">03</span>Skills</a>
+        <a href="#journey" class="nav-link" data-section="journey"><span class="nav-num">04</span>Journey</a>
+        <a href="#contact" class="nav-link nav-link-contact" data-section="contact"><span class="nav-num">05</span>Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-solid nav-cta magnetic">Let’s talk
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
   <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-aurora"></div>
-    <div class="hero-grid-bg"></div>
-    <div class="container">
-      <div class="hero-content-grid">
-        <div class="hero-left">
-          <!-- Status badge -->
-          <div class="hero-status">
-            <span class="status-dot"></span>
-            Available for opportunities
-          </div>
+  <main id="top">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-          <p class="hero-greeting">
-            <span class="wave-emoji">👋</span> Hey there, I'm
-          </p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow reveal-load" style="--d:.05s">
+          <span class="pulse-dot"></span>
+          Available for opportunities — Noida, India
+        </p>
 
-          <h1 class="hero-name">
-            <span class="line-1">Somil</span>
-            <span class="line-2">Srivastava</span>
-          </h1>
+        <h1 class="hero-title">
+          <span class="ht-line"><span class="ht-inner" style="--d:.15s">I turn <em>code</em></span></span>
+          <span class="ht-line"><span class="ht-inner" style="--d:.30s">into <em>commerce</em>.</span></span>
+        </h1>
 
-          <div class="hero-tagline-wrapper">
-            <p class="hero-tagline">
-              <span class="typed-prefix">&gt;&nbsp;</span>
-              <span class="typed-text" id="typed-text"></span>
-              <span class="cursor"></span>
-            </p>
-          </div>
+        <p class="hero-sub reveal-load" style="--d:.42s">
+          I’m <strong>Somil Srivastava</strong> — a
+          <span class="word-rotator" id="word-rotator">
+            <span class="wr-word is-active">Full-Stack Java Developer</span>
+            <span class="wr-word">Marketplace Founder</span>
+            <span class="wr-word">MCA @ Amity University</span>
+            <span class="wr-word">Problem Solver</span>
+          </span><br />
+          building scalable platforms and running real marketplaces with real users.
+        </p>
 
-          <p class="hero-description">
-            MCA student at Amity University, Noida — building scalable marketplace platforms and crafting robust full-stack solutions.
-            I turn complex business ideas into thriving digital products.
-          </p>
+        <div class="hero-actions reveal-load" style="--d:.55s">
+          <a href="#work" class="btn btn-solid magnetic">See my work
+            <svg viewBox="0 0 24 24"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost magnetic">Get in touch
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
 
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              View My Work
-              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#contact" class="btn btn-glass">
-              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Let's Connect
-            </a>
-          </div>
+        <div class="hero-stats reveal-load" style="--d:.68s">
+          <div class="hstat"><span class="hstat-num" data-count="3">0</span><span class="hstat-plus">+</span>
+            <span class="hstat-label">Marketplaces live</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num" data-count="10">0</span><span class="hstat-plus">+</span>
+            <span class="hstat-label">Projects built</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num" data-count="2">0</span><span class="hstat-plus">+</span>
+            <span class="hstat-label">Years coding</span></div>
+        </div>
+      </div>
 
-          <div class="hero-stats">
-            <div class="stat-block">
-              <div class="stat-number" data-count="3">0+</div>
-              <div class="stat-label">Marketplaces</div>
-            </div>
-            <div class="stat-block">
-              <div class="stat-number" data-count="10">0+</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-block">
-              <div class="stat-number" data-count="2">0+</div>
-              <div class="stat-label">Years Coding</div>
-            </div>
+      <div class="hero-visual reveal-load" style="--d:.35s">
+        <div class="portrait-card" id="portrait">
+          <img src="https://i.ibb.co/CsWMHjNd/6334490503319066020-121.jpg" alt="Somil Srivastava" class="portrait-img" loading="eager" />
+          <div class="portrait-tag">
+            <span class="pulse-dot"></span> Open to work
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="hero-photo-container">
-            <div class="photo-ring photo-ring-1"></div>
-            <div class="photo-ring photo-ring-2"></div>
-            <div class="photo-ring photo-ring-3"></div>
-            <div class="photo-border"></div>
-            <img
-              src="https://i.ibb.co/CsWMHjNd/6334490503319066020-121.jpg"
-              alt="Somil Srivastava"
-              class="hero-photo"
-              loading="eager"
-            />
-            <!-- Orbit icons -->
-            <div class="orbit-icon orbit-icon-1" title="Java">
-              <svg viewBox="0 0 24 24" stroke="#00e5ff" stroke-width="1.5" fill="none"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div class="orbit-icon orbit-icon-2" title="Design">
-              <svg viewBox="0 0 24 24" stroke="#e040fb" stroke-width="1.5" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-            </div>
-            <div class="orbit-icon orbit-icon-3" title="Database">
-              <svg viewBox="0 0 24 24" stroke="#7c4dff" stroke-width="1.5" fill="none"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <div class="orbit-icon orbit-icon-4" title="Business">
-              <svg viewBox="0 0 24 24" stroke="#00e676" stroke-width="1.5" fill="none"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-          </div>
+        <!-- Rotating badge -->
+        <div class="orbit-badge" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="circlePath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text>
+              <textPath href="#circlePath">JAVA DEVELOPER ✦ MARKETPLACE FOUNDER ✦ </textPath>
+            </text>
+          </svg>
+          <span class="orbit-badge-center">✦</span>
         </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll reveal-load" style="--d:.9s" aria-label="Scroll to About">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Java ✦ Spring Boot ✦ Hibernate ✦ MySQL ✦ REST APIs ✦ Microservices ✦ HTML / CSS / JS ✦ Marketplace Ops ✦ Maven ✦ Git ✦&nbsp;</span>
+      <span>Java ✦ Spring Boot ✦ Hibernate ✦ MySQL ✦ REST APIs ✦ Microservices ✦ HTML / CSS / JS ✦ Marketplace Ops ✦ Maven ✦ Git ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow scramble" data-text="( 01 ) — About">( 01 ) — About</p>
+        <h2 class="section-title">
+          <span class="line-mask"><span class="line-inner">Code, commerce &</span></span>
+          <span class="line-mask"><span class="line-inner"><em>creative problem-solving</em></span></span>
+        </h2>
+      </div>
+
+      <div class="bento">
+        <article class="bento-card bento-bio reveal">
+          <p class="bio-lede">
+            I’m a <mark>21-year-old</mark> developer-entrepreneur pursuing my Master’s in Computer
+            Applications at <mark>Amity University, Noida</mark>.
+          </p>
+          <p>
+            As a certified Full-Stack Java Developer, I design robust backends and clean interfaces.
+            What sets me apart: I don’t just ship code — I’ve founded and operate
+            <mark>multiple online marketplaces</mark>, owning everything from platform architecture
+            to daily business operations.
+          </p>
+          <p>
+            I believe great software creates tangible business value. Enterprise app or marketplace
+            scaling to thousands of users — same dedication, same precision.
+          </p>
+        </article>
+
+        <article class="bento-card bento-facts reveal" style="--d:.1s">
+          <p class="bento-label">Quick facts</p>
+          <ul class="facts">
+            <li><span>Age</span><strong>21 years</strong></li>
+            <li><span>Based in</span><strong>Noida, India</strong></li>
+            <li><span>Education</span><strong>MCA · 2nd year</strong></li>
+            <li><span>Role</span><strong>Java Developer</strong></li>
+            <li><span>Founder of</span><strong>3+ marketplaces</strong></li>
+          </ul>
+        </article>
+
+        <article class="bento-card bento-now reveal" style="--d:.18s">
+          <p class="bento-label">Currently</p>
+          <p class="now-text">Deep in the <strong>Java ecosystem</strong> — Spring Boot, microservices &
+            database design — while scaling marketplace operations on the side.</p>
+          <div class="now-chips">
+            <span>Spring Boot</span><span>Microservices</span><span>MySQL</span>
+          </div>
+        </article>
+
+        <article class="bento-card bento-cta reveal" style="--d:.26s">
+          <p class="bento-label">Socials</p>
+          <div class="mini-socials">
+            <a href="https://www.linkedin.com/in/somil-srivastava-av/" target="_blank" rel="noopener noreferrer" class="mini-social magnetic">
+              LinkedIn <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+            </a>
+            <a href="https://www.instagram.com/ig__sommil_srivastava/" target="_blank" rel="noopener noreferrer" class="mini-social magnetic">
+              Instagram <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          About Me
-        </div>
-        <h2 class="section-title">Know Who <span class="gradient-text">I Am</span></h2>
-        <p class="section-subtitle">A blend of code, commerce, and creative problem-solving</p>
-        <div class="section-line"></div>
+  <!-- ===== WORK ===== -->
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow scramble" data-text="( 02 ) — Selected Work">( 02 ) — Selected Work</p>
+        <h2 class="section-title">
+          <span class="line-mask"><span class="line-inner">Platforms I’ve built,</span></span>
+          <span class="line-mask"><span class="line-inner"><em>own & operate</em></span></span>
+        </h2>
       </div>
 
-      <div class="about-layout">
-        <div class="about-text-block reveal-left">
-          <p>
-            I'm <span class="highlight-text">Somil Srivastava</span>, a 22-year-old passionate Computer Science professional currently pursuing
-            my Master's in Computer Applications at <span class="highlight-text">Amity University, Noida</span>.
-          </p>
-          <p>
-            As a certified <span class="highlight-text">Full-Stack Java Developer</span>, I build robust backend systems and elegant
-            frontend interfaces. But what truly sets me apart is my entrepreneurial spirit — I've created and currently operate
-            <span class="highlight-text">multiple online marketplaces</span>, managing everything from platform architecture to business operations.
-          </p>
-          <p>
-            I believe in building technology that solves real-world problems and creates tangible business value. Whether it's developing
-            an enterprise-grade application or scaling a marketplace to thousands of users, I bring the same level of dedication and precision.
-          </p>
-        </div>
+      <div class="work-list">
+        <article class="work-row reveal" data-idx="01" data-label="Live · Multi-vendor">
+          <div class="work-idx">01</div>
+          <div class="work-main">
+            <h3 class="work-title">Digital Marketplace Platform</h3>
+            <p class="work-desc">Multi-vendor marketplace with seller onboarding, product management, order processing and payment integration — built from scratch, serving active users with real transactions.</p>
+            <div class="work-tags"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>REST API</span></div>
+          </div>
+          <div class="work-meta">
+            <span class="live-pill"><span class="pulse-dot"></span>Live</span>
+            <span class="work-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+        </article>
 
-        <div class="about-detail-grid reveal-right">
-          <div class="detail-card glow-card delay-1">
-            <div class="detail-card-icon cyan">
-              <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00e5ff" stroke-width="1.5" fill="none"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div class="detail-card-label">Age</div>
-            <div class="detail-card-value">22 Years</div>
+        <article class="work-row reveal" data-idx="02" data-label="Live · E-commerce">
+          <div class="work-idx">02</div>
+          <div class="work-main">
+            <h3 class="work-title">E-Commerce Marketplace</h3>
+            <p class="work-desc">End-to-end e-commerce platform — product catalogs, authentication, cart & checkout, real-time inventory. Independently owned and operated.</p>
+            <div class="work-tags"><span>Java</span><span>Hibernate</span><span>JSP</span><span>Bootstrap</span></div>
           </div>
-          <div class="detail-card glow-card delay-2">
-            <div class="detail-card-icon purple">
-              <svg viewBox="0 0 24 24" width="22" height="22" stroke="#7c4dff" stroke-width="1.5" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <div class="detail-card-label">Education</div>
-            <div class="detail-card-value">MCA, 2nd Year</div>
+          <div class="work-meta">
+            <span class="live-pill"><span class="pulse-dot"></span>Live</span>
+            <span class="work-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
           </div>
-          <div class="detail-card glow-card delay-3">
-            <div class="detail-card-icon green">
-              <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00e676" stroke-width="1.5" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="detail-card-label">Location</div>
-            <div class="detail-card-value">Noida, India</div>
+        </article>
+
+        <article class="work-row reveal" data-idx="03" data-label="Live · Services">
+          <div class="work-idx">03</div>
+          <div class="work-main">
+            <h3 class="work-title">Services Marketplace</h3>
+            <p class="work-desc">Service marketplace connecting providers and consumers — scheduling, reviews, automated matching. Handling real transactions daily.</p>
+            <div class="work-tags"><span>Full-Stack Java</span><span>MySQL</span><span>Maven</span></div>
           </div>
-          <div class="detail-card glow-card delay-4">
-            <div class="detail-card-icon pink">
-              <svg viewBox="0 0 24 24" width="22" height="22" stroke="#e040fb" stroke-width="1.5" fill="none"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div class="detail-card-label">Role</div>
-            <div class="detail-card-value">Java Developer</div>
+          <div class="work-meta">
+            <span class="live-pill"><span class="pulse-dot"></span>Live</span>
+            <span class="work-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
           </div>
-          <div class="detail-card glow-card delay-5" style="grid-column: span 2;">
-            <div class="detail-card-icon orange">
-              <svg viewBox="0 0 24 24" width="22" height="22" stroke="#ff6d00" stroke-width="1.5" fill="none"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <div class="detail-card-label">Entrepreneurship</div>
-            <div class="detail-card-value">Marketplace Owner & Operator</div>
+        </article>
+
+        <article class="work-row reveal" data-idx="04" data-label="Certification builds">
+          <div class="work-idx">04</div>
+          <div class="work-main">
+            <h3 class="work-title">Full-Stack Web Applications</h3>
+            <p class="work-desc">A collection of certification-era builds — MVC architecture, database design, session management and responsive UI.</p>
+            <div class="work-tags"><span>Java EE</span><span>Spring MVC</span><span>JDBC</span><span>CSS3</span></div>
           </div>
-        </div>
+          <div class="work-meta">
+            <span class="work-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Expertise
-        </div>
-        <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
-        <p class="section-subtitle">The tools and technologies I use to bring ideas to life</p>
-        <div class="section-line"></div>
+  <section id="skills" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow scramble" data-text="( 03 ) — Capabilities">( 03 ) — Capabilities</p>
+        <h2 class="section-title">
+          <span class="line-mask"><span class="line-inner">Tools I use to make</span></span>
+          <span class="line-mask"><span class="line-inner"><em>ideas ship</em></span></span>
+        </h2>
       </div>
 
-      <div class="skills-layout">
-        <!-- Backend -->
-        <div class="skill-card glow-card reveal delay-1">
-          <div class="skill-card-header">
-            <div class="skill-card-icon backend">
-              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
-            </div>
-            <h3 class="skill-card-title">Backend Development</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Java (Core & Advanced)</span>
-                <span class="skill-row-pct cyan">90%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill cyan" data-width="90"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Spring Boot / Spring MVC</span>
-                <span class="skill-row-pct cyan">80%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill cyan" data-width="80"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">REST APIs / Microservices</span>
-                <span class="skill-row-pct cyan">78%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill cyan" data-width="78"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">SQL / MySQL / JDBC</span>
-                <span class="skill-row-pct cyan">85%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill cyan" data-width="85"></div></div>
-            </div>
-          </div>
-        </div>
+      <div class="skills-grid">
+        <article class="skill-col reveal">
+          <p class="skill-col-idx">/ 01</p>
+          <h3 class="skill-col-title">Backend</h3>
+          <p class="skill-col-desc">Robust, scalable server-side systems in the Java ecosystem.</p>
+          <ul class="skill-list">
+            <li>Java — Core & Advanced</li>
+            <li>Spring Boot / Spring MVC</li>
+            <li>REST APIs & Microservices</li>
+            <li>Hibernate / JDBC</li>
+            <li>MySQL & database design</li>
+          </ul>
+        </article>
 
-        <!-- Frontend -->
-        <div class="skill-card glow-card reveal delay-2">
-          <div class="skill-card-header">
-            <div class="skill-card-icon frontend">
-              <svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/><polyline points="2 15.5 12 8.5 22 15.5"/><line x1="12" y1="2" x2="12" y2="8.5"/></svg>
-            </div>
-            <h3 class="skill-card-title">Frontend Development</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">HTML5</span>
-                <span class="skill-row-pct pink">92%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill pink" data-width="92"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">CSS3 / Responsive Design</span>
-                <span class="skill-row-pct pink">88%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill pink" data-width="88"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">JavaScript</span>
-                <span class="skill-row-pct pink">75%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill pink" data-width="75"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Bootstrap / UI Frameworks</span>
-                <span class="skill-row-pct pink">82%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill pink" data-width="82"></div></div>
-            </div>
-          </div>
-        </div>
+        <article class="skill-col reveal" style="--d:.12s">
+          <p class="skill-col-idx">/ 02</p>
+          <h3 class="skill-col-title">Frontend</h3>
+          <p class="skill-col-desc">Clean, responsive interfaces users actually enjoy.</p>
+          <ul class="skill-list">
+            <li>HTML5 & semantic markup</li>
+            <li>CSS3 / responsive design</li>
+            <li>JavaScript</li>
+            <li>Bootstrap & UI frameworks</li>
+            <li>JSP / Servlets</li>
+          </ul>
+        </article>
 
-        <!-- Business -->
-        <div class="skill-card glow-card reveal delay-3">
-          <div class="skill-card-header">
-            <div class="skill-card-icon business">
-              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <h3 class="skill-card-title">Business & Marketplaces</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Marketplace Management</span>
-                <span class="skill-row-pct green">95%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill green" data-width="95"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Platform Operations</span>
-                <span class="skill-row-pct green">88%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill green" data-width="88"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">Digital Strategy & Growth</span>
-                <span class="skill-row-pct green">82%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill green" data-width="82"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-row-info">
-                <span class="skill-row-name">E-Commerce Analytics</span>
-                <span class="skill-row-pct green">78%</span>
-              </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill green" data-width="78"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tech chips -->
-      <div class="tech-chips reveal">
-        <span class="tech-chip">Java</span>
-        <span class="tech-chip">Spring Boot</span>
-        <span class="tech-chip">Hibernate</span>
-        <span class="tech-chip">REST APIs</span>
-        <span class="tech-chip">MySQL</span>
-        <span class="tech-chip">JDBC</span>
-        <span class="tech-chip">HTML5</span>
-        <span class="tech-chip">CSS3</span>
-        <span class="tech-chip">JavaScript</span>
-        <span class="tech-chip">Bootstrap</span>
-        <span class="tech-chip">Maven</span>
-        <span class="tech-chip">Git</span>
-        <span class="tech-chip">Servlet</span>
-        <span class="tech-chip">JSP</span>
-        <span class="tech-chip">Spring MVC</span>
-        <span class="tech-chip">Microservices</span>
+        <article class="skill-col reveal" style="--d:.24s">
+          <p class="skill-col-idx">/ 03</p>
+          <h3 class="skill-col-title">Business</h3>
+          <p class="skill-col-desc">Operator's mindset — from architecture to P&L.</p>
+          <ul class="skill-list">
+            <li>Marketplace management</li>
+            <li>Platform operations</li>
+            <li>Digital strategy & growth</li>
+            <li>E-commerce analytics</li>
+            <li>Vendor relations</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Portfolio
-        </div>
-        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-        <p class="section-subtitle">Real-world platforms I've built, owned, and scaled</p>
-        <div class="section-line"></div>
+  <!-- ===== JOURNEY ===== -->
+  <section id="journey" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow scramble" data-text="( 04 ) — Journey">( 04 ) — Journey</p>
+        <h2 class="section-title">
+          <span class="line-mask"><span class="line-inner">Education &</span></span>
+          <span class="line-mask"><span class="line-inner"><em>milestones</em></span></span>
+        </h2>
       </div>
 
-      <div class="projects-masonry">
-        <!-- Featured Project -->
-        <div class="project-item featured glow-card reveal">
-          <div class="project-visual">
-            <div class="project-visual-bg gradient-1"></div>
-            <div class="project-grid-overlay"></div>
-            <div class="project-icon-big">
-              <svg viewBox="0 0 24 24" stroke="#00e5ff" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="project-badge live"><span class="pulse-circle"></span> Live</div>
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-when">2024 — Present</div>
+          <div class="tl-body">
+            <h3 class="tl-title">Master of Computer Applications <span class="tl-now">Now</span></h3>
+            <p class="tl-org">Amity University, Noida</p>
+            <p class="tl-desc">2nd year — software engineering & advanced computing, focused on the Java ecosystem, database management and enterprise application development.</p>
           </div>
-          <div class="project-body">
-            <h3 class="project-title">Digital Marketplace Platform</h3>
-            <p class="project-desc">
-              A fully functional multi-vendor marketplace with seller onboarding, product management, order processing, and payment integration.
-              Built from scratch and currently serving active users with real transactions.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Spring Boot</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">REST API</span>
-              <span class="project-tag">HTML/CSS</span>
-            </div>
-          </div>
-        </div>
+        </article>
 
-        <!-- Project 2 -->
-        <div class="project-item glow-card reveal delay-1">
-          <div class="project-visual">
-            <div class="project-visual-bg gradient-2"></div>
-            <div class="project-grid-overlay"></div>
-            <div class="project-icon-big">
-              <svg viewBox="0 0 24 24" stroke="#e040fb" fill="none"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <div class="project-badge live"><span class="pulse-circle"></span> Live</div>
+        <article class="tl-item reveal">
+          <div class="tl-when">Certification</div>
+          <div class="tl-body">
+            <h3 class="tl-title">Full-Stack Java Developer</h3>
+            <p class="tl-org">Professional certification</p>
+            <p class="tl-desc">Core & Advanced Java, Spring Framework, Spring Boot, Hibernate, REST APIs, frontend technologies and MySQL.</p>
           </div>
-          <div class="project-body">
-            <h3 class="project-title">E-Commerce Marketplace</h3>
-            <p class="project-desc">
-              End-to-end e-commerce platform featuring product catalogs, authentication, cart & checkout, and real-time inventory management. Independently owned and operated.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Hibernate</span>
-              <span class="project-tag">JSP</span>
-              <span class="project-tag">Bootstrap</span>
-            </div>
-          </div>
-        </div>
+        </article>
 
-        <!-- Project 3 -->
-        <div class="project-item glow-card reveal delay-2">
-          <div class="project-visual">
-            <div class="project-visual-bg gradient-3"></div>
-            <div class="project-grid-overlay"></div>
-            <div class="project-icon-big">
-              <svg viewBox="0 0 24 24" stroke="#00e676" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="project-badge live"><span class="pulse-circle"></span> Live</div>
+        <article class="tl-item reveal">
+          <div class="tl-when">Ongoing</div>
+          <div class="tl-body">
+            <h3 class="tl-title">Marketplace Entrepreneurship</h3>
+            <p class="tl-org">Founder & operator</p>
+            <p class="tl-desc">Founded and running multiple digital marketplaces — platform architecture, vendor management, scaling operations and business strategy.</p>
           </div>
-          <div class="project-body">
-            <h3 class="project-title">Services Marketplace</h3>
-            <p class="project-desc">
-              Service-based marketplace connecting providers and consumers with scheduling, reviews, and automated matching. Handling real transactions.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Full-Stack Java</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">Maven</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-item glow-card reveal delay-3">
-          <div class="project-visual">
-            <div class="project-visual-bg gradient-4"></div>
-            <div class="project-grid-overlay"></div>
-            <div class="project-icon-big">
-              <svg viewBox="0 0 24 24" stroke="#7c4dff" fill="none"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Full-Stack Web Applications</h3>
-            <p class="project-desc">
-              Multiple applications built during certification — MVC architecture, database design, session management, and responsive UI.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Java EE</span>
-              <span class="project-tag">Spring MVC</span>
-              <span class="project-tag">JDBC</span>
-              <span class="project-tag">CSS3</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EDUCATION ===== -->
-  <section id="education">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge">
-          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Journey
-        </div>
-        <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
-        <p class="section-subtitle">My academic path and professional development</p>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="education-container">
-        <div class="timeline-line"></div>
-
-        <!-- MCA -->
-        <div class="timeline-entry current reveal">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glow-card">
-            <div class="timeline-year-badge">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              2024 — Present
-            </div>
-            <h3 class="timeline-degree">Master of Computer Applications (MCA)</h3>
-            <p class="timeline-institution">
-              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              Amity University, Noida
-            </p>
-            <p class="timeline-details">Currently in 2nd year. Specializing in software engineering and advanced computing — focused on Java ecosystem, database management, and enterprise application development.</p>
-          </div>
-        </div>
-
-        <!-- Certification -->
-        <div class="timeline-entry reveal">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glow-card">
-            <div class="timeline-year-badge">
-              <svg viewBox="0 0 24 24"><path d="M12 15l-2 5-2-1.5L6 20l1-5"/><path d="M18 20l-2-1.5L14 20l-1-5"/><circle cx="12" cy="9" r="6"/></svg>
-              Professional Certification
-            </div>
-            <h3 class="timeline-degree">Full-Stack Java Developer Course</h3>
-            <p class="timeline-institution">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Certified Professional Training
-            </p>
-            <p class="timeline-details">Comprehensive training: Core Java, Advanced Java, Spring Framework, Spring Boot, Hibernate, REST APIs, frontend technologies, and MySQL database management.</p>
-          </div>
-        </div>
-
-        <!-- Entrepreneurship -->
-        <div class="timeline-entry reveal">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glow-card">
-            <div class="timeline-year-badge">
-              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              Ongoing Venture
-            </div>
-            <h3 class="timeline-degree">Marketplace Entrepreneurship</h3>
-            <p class="timeline-institution">
-              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              Self-Driven Business
-            </p>
-            <p class="timeline-details">Founded and operating multiple digital marketplace platforms. Hands-on experience in platform architecture, vendor management, scaling operations, and business strategy.</p>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Connect
-        </div>
-        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-        <p class="section-subtitle">Let's collaborate on something extraordinary</p>
-        <div class="section-line"></div>
+  <section id="contact" class="section contact">
+    <div class="wrap">
+      <p class="eyebrow scramble reveal" data-text="( 05 ) — Contact" style="text-align:center">( 05 ) — Contact</p>
+      <h2 class="contact-title reveal">
+        <span class="line-mask"><span class="line-inner">Have an idea?</span></span>
+        <span class="line-mask"><span class="line-inner"><em>Let’s make it real.</em></span></span>
+      </h2>
+      <p class="contact-sub reveal">
+        Projects, collaborations, marketplace opportunities — or just a hello.
+        My inbox is always open.
+      </p>
+
+      <div class="contact-actions reveal">
+        <a href="https://www.linkedin.com/in/somil-srivastava-av/" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-big magnetic">
+          Message me on LinkedIn
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ig__sommil_srivastava/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-big magnetic">
+          @ig__sommil_srivastava
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
       </div>
+    </div>
 
-      <div class="contact-layout">
-        <p class="contact-intro reveal">
-          Whether you have an exciting project idea, a collaboration opportunity, or just want to say hello — I'd love to hear from you. Let's create something amazing together!
-        </p>
-
-        <div class="contact-grid reveal">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/ig__sommil_srivastava/" target="_blank" rel="noopener noreferrer" class="social-link-card glow-card" id="social-instagram">
-            <div class="social-icon-wrapper instagram-bg">
-              <svg viewBox="0 0 24 24" stroke="#fff"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </div>
-            <div class="social-details">
-              <div class="social-detail-label">Instagram</div>
-              <div class="social-detail-handle">@ig__sommil_srivastava</div>
-            </div>
-            <svg class="social-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/somil-srivastava-av/" target="_blank" rel="noopener noreferrer" class="social-link-card glow-card" id="social-linkedin">
-            <div class="social-icon-wrapper linkedin-bg">
-              <svg viewBox="0 0 24 24" stroke="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <div class="social-details">
-              <div class="social-detail-label">LinkedIn</div>
-              <div class="social-detail-handle">Somil Srivastava</div>
-            </div>
-            <svg class="social-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- CTA Card -->
-        <div class="contact-cta glow-card reveal">
-          <div class="contact-cta-aurora"></div>
-          <h3>Ready to Build Something <span class="gradient-text">Extraordinary</span>?</h3>
-          <p>I'm always open to discussing new projects, creative ideas, or marketplace opportunities.</p>
-          <a href="https://www.linkedin.com/in/somil-srivastava-av/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="position:relative;z-index:1;">
-            Send a Message
-            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </a>
-        </div>
+    <div class="marquee marquee-contact" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Let’s work together ✦ Let’s work together ✦ Let’s work together ✦&nbsp;</span>
+        <span>Let’s work together ✦ Let’s work together ✦ Let’s work together ✦&nbsp;</span>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <p>Designed & Built with <span class="footer-heart">♥</span> by Somil Srivastava · © 2026</p>
-        </div>
-        <div class="footer-right">
-          <a href="https://www.instagram.com/ig__sommil_srivastava/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/somil-srivastava-av/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-        </div>
-      </div>
+    <div class="footer-giant" aria-hidden="true">
+      <span class="fg-text">SOMIL SRIVASTAVA</span>
+    </div>
+    <div class="wrap footer-inner">
+      <p class="footer-copy">© 2026 Somil Srivastava — designed & built by me.</p>
+      <p class="footer-time">Noida, IN — <span id="local-time">--:--</span></p>
+      <button class="to-top magnetic" id="to-top" aria-label="Back to top">
+        Back to top
+        <svg viewBox="0 0 24 24"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
+      </button>
     </div>
   </footer>
-
-  <!-- Back to Top -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-  </button>
 
   <script src="script.js"></script>
 </body>
