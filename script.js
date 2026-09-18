@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === current));
     siCurrent.textContent = String(sectionIds.indexOf(current) + 1).padStart(2, '0');
 
-    if (!reducedMotion) {
+    if (finePointer && !reducedMotion) {
       marqueeSkew = Math.max(-10, Math.min(10, (y - lastScrollY) * 0.35));
     }
     lastScrollY = y;
@@ -154,12 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Marquee skew: desktop only, and skip DOM writes while idle
   const marquees = document.querySelectorAll('.marquee');
-  if (!reducedMotion && marquees.length) {
+  if (finePointer && !reducedMotion && marquees.length) {
+    let lastApplied = 0;
     (function decaySkew() {
       marqueeSkew *= 0.88;
       const s = Math.abs(marqueeSkew) < 0.05 ? 0 : marqueeSkew;
-      marquees.forEach(m => { m.style.transform = `skewX(${s}deg)`; });
+      if (s !== lastApplied) {
+        marquees.forEach(m => { m.style.transform = `skewX(${s}deg)`; });
+        lastApplied = s;
+      }
       requestAnimationFrame(decaySkew);
     })();
   }
@@ -434,9 +439,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ===== WEBGL SHADER BACKGROUND (hero) =====
+  // ===== WEBGL SHADER BACKGROUND (hero, desktop only) =====
   (function initShader() {
-    if (reducedMotion) return;
+    if (reducedMotion || !finePointer) return;
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
     const gl = canvas.getContext('webgl', { alpha: true, antialias: false });
